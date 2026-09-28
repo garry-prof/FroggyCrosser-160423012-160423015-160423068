@@ -14,7 +14,6 @@ export async function recordLastGame(username, score, frogs) {
   });
 }
 
-// Satu pemain hanya punya satu entri: skor terbaiknya
 export async function updateHighScore(username, score) {
   const list = await getHighScores();
 

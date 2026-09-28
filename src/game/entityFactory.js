@@ -1,7 +1,6 @@
 import LANES from '../constants/lanes';
 import VEHICLE_TYPES from '../constants/vehicles';
 
-// Posisi & ukuran disimpan dalam pixel, dihitung dari tileSize
 export function createObstacles(tileSize, boardWidth) {
   const result = [];
   let counter = 0;
@@ -38,7 +37,6 @@ export function createObstacles(tileSize, boardWidth) {
   return result;
 }
 
-// Geser objek; kalau keluar layar, muncul lagi dari sisi seberang
 export function moveObstacle(item, dt, multiplier, boardWidth) {
   const cycle = boardWidth + item.width;
   let x = item.x + item.speed * item.direction * multiplier * dt;

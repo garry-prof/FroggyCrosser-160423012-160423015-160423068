@@ -1,4 +1,3 @@
-// Urut dari syarat tertinggi, dicek dari atas ke bawah
 const TITLES = [
   { minFrogs: 5, title: 'Apex Amphibian', emoji: '👑' },
   { minFrogs: 4, title: 'Highway Navigator', emoji: '🛣️' },

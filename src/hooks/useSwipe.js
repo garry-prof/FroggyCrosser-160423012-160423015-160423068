@@ -18,7 +18,6 @@ export default function useSwipe(onSwipe) {
         if (Math.abs(dx) < SWIPE_MIN_DISTANCE && Math.abs(dy) < SWIPE_MIN_DISTANCE) {
           return;
         }
-        // Arah ditentukan oleh sumbu dengan pergeseran terbesar
         if (Math.abs(dx) > Math.abs(dy)) {
           onSwipeRef.current(dx > 0 ? 'right' : 'left');
         } else {

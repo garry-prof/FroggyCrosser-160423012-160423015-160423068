@@ -10,7 +10,6 @@ export function randomFlyDelay() {
   return FLY_MIN_DELAY + Math.random() * (FLY_MAX_DELAY - FLY_MIN_DELAY);
 }
 
-// Lalat "menempel" di salah satu kayu, jadi ikut hanyut bersama kayunya
 function spawnFly(state) {
   const logs = state.obstacles.filter(function (item) {
     return item.type === 'log';
@@ -37,7 +36,6 @@ export function getFlyPosition(fly, obstacles) {
 }
 
 export function updateFly(state, dt) {
-  // Belum ada lalat: hitung mundur sampai muncul
   if (state.fly === null) {
     const flyTimer = state.flyTimer - dt;
     if (flyTimer <= 0) {
@@ -46,7 +44,6 @@ export function updateFly(state, dt) {
     return { ...state, flyTimer: flyTimer };
   }
 
-  // Lalat kedaluwarsa
   const remaining = state.fly.timeLeft - dt;
   if (remaining <= 0) {
     return { ...state, fly: null };
@@ -55,7 +52,6 @@ export function updateFly(state, dt) {
   const fly = { ...state.fly, timeLeft: remaining };
   const position = getFlyPosition(fly, state.obstacles);
 
-  // Cek apakah katak menangkap lalat
   if (position !== null && position.row === state.frog.row) {
     if (Math.abs(position.x - state.frog.x) < state.tileSize * 0.6) {
       return {

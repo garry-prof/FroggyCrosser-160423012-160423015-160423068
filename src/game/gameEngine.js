@@ -65,7 +65,6 @@ function handleCrossing(state) {
   };
 }
 
-// Dipanggil setiap kali pemain swipe
 export function moveFrog(state, direction) {
   if (state.isOver) {
     return state;
@@ -83,7 +82,6 @@ export function moveFrog(state, direction) {
   if (row < GOAL_ROW) row = GOAL_ROW;
   if (row > START_ROW) row = START_ROW;
 
-  // Di darat/jalan, rapikan posisi ke kolom grid terdekat
   if (getRowType(row) !== 'river') {
     x = Math.round(x / tile) * tile;
   }
@@ -116,7 +114,6 @@ function applyFrogRules(state, dt) {
       return resetFrog(state, 'Katak tenggelam!');
     }
 
-    // Katak ikut terbawa kayu
     const newX = frog.x + log.speed * log.direction * state.speedMultiplier * dt;
     const tooLeft = newX < -state.tileSize / 2;
     const tooRight = newX > state.boardWidth - state.tileSize / 2;
@@ -129,7 +126,6 @@ function applyFrogRules(state, dt) {
   return state;
 }
 
-// Dipanggil setiap frame oleh game loop
 export function updateGame(state, dtRaw) {
   if (state.isOver) {
     return state;

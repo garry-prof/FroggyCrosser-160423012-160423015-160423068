@@ -1,7 +1,6 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import STORAGE_KEYS from './storageKeys';
 
-// Format disimpan sebagai JSON: [{ username: 'garry', score: 350 }, ...]
 export async function getHighScores() {
   const raw = await AsyncStorage.getItem(STORAGE_KEYS.HIGH_SCORES);
   if (raw === null) {

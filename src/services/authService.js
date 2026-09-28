@@ -1,6 +1,5 @@
 import { saveUsername, getUsername, removeUsername } from '../data/userStorage';
 
-// Mengembalikan pesan error, atau null kalau valid
 export function validateUsername(username) {
   const clean = username.trim();
   if (clean.length === 0) {

@@ -2,7 +2,6 @@ export function isOverlap(aStart, aWidth, bStart, bWidth) {
   return aStart < bStart + bWidth && aStart + aWidth > bStart;
 }
 
-// Hitbox katak dikecilkan sedikit supaya tabrakan terasa adil
 export function isFrogHit(frog, obstacles, tileSize) {
   const margin = tileSize * 0.2;
   const frogStart = frog.x + margin;
@@ -19,7 +18,6 @@ export function isFrogHit(frog, obstacles, tileSize) {
   return false;
 }
 
-// Katak dianggap berpijak kalau titik tengahnya berada di atas kayu
 export function findLogUnderFrog(frog, obstacles, tileSize) {
   const center = frog.x + tileSize / 2;
 

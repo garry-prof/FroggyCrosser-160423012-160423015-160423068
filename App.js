@@ -15,7 +15,6 @@ export default function App() {
     checkLogin();
   }, []);
 
-  // Kalau username sudah tersimpan, Layar Login dilewati
   async function checkLogin() {
     const loggedIn = await isLoggedIn();
     setInitialRoute(loggedIn ? 'Main' : 'Login');

@@ -4,7 +4,6 @@ import VEHICLE_TYPES from '../../constants/vehicles';
 
 export default function Vehicle({ item, tileSize }) {
   const type = VEHICLE_TYPES[item.kind];
-  // Emoji kendaraan menghadap kiri, dibalik saat bergerak ke kanan
   const flip = item.direction === 1 ? -1 : 1;
 
   return (

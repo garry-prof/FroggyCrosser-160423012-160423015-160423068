@@ -25,7 +25,6 @@ export default function HomeScreen({ navigation }) {
     };
   }, []);
 
-  // Refresh setiap kali layar kembali dibuka (misal selesai main)
   useFocusEffect(
     React.useCallback(function () {
       loadData();
@@ -64,7 +63,7 @@ export default function HomeScreen({ navigation }) {
       <View style={styles.actions}>
         <AppButton title="▶  Play Game" onPress={showHowToPlay} />
       </View>
-      <Text style={styles.tip}>Buka menu ☰ untuk High Score dan Log Out</Text>
+      <Text style={styles.tip}>Buka menu untuk cek High Score dan Log Out</Text>
     </View>
   );
 }

@@ -18,12 +18,11 @@ import Log from '../components/game/Log';
 import Fly from '../components/game/Fly';
 import GameHUD from '../components/game/GameHUD';
 
-const RESERVED_HEIGHT = 200; // ruang untuk HUD, tombol jeda, dan petunjuk
+const RESERVED_HEIGHT = 200;
 
 export default function GameScreen({ navigation }) {
   const { width, height } = useWindowDimensions();
 
-  // Ukuran petak menyesuaikan layar, diambil yang paling muat
   const tileByWidth = Math.floor((width - 16) / COLS);
   const tileByHeight = Math.floor((height - RESERVED_HEIGHT) / ROWS);
   const tileSize = Math.min(tileByWidth, tileByHeight);
@@ -51,7 +50,6 @@ export default function GameScreen({ navigation }) {
     });
   });
 
-  // Timer habis → simpan data permainan lalu pindah ke Layar Hasil
   useEffect(function () {
     if (game.isOver && !hasFinished.current) {
       hasFinished.current = true;

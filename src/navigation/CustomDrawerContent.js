@@ -16,7 +16,6 @@ export default function CustomDrawerContent(props) {
   async function doLogout() {
     await logout();
     props.navigation.closeDrawer();
-    // Reset di level stack (parent), bukan di drawer
     props.navigation.getParent().reset({ index: 0, routes: [{ name: 'Login' }] });
   }
 

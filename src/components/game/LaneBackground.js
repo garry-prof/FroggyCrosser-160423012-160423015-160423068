@@ -14,7 +14,6 @@ function getRowColor(type) {
 function renderDecoration(type, rowIndex, tileSize) {
   const items = [];
 
-  // Marka putus-putus di antara lajur jalan
   if (type === 'road' && ROW_TYPES[rowIndex + 1] === 'road') {
     for (let c = 0; c < COLS; c++) {
       items.push(
@@ -22,8 +21,7 @@ function renderDecoration(type, rowIndex, tileSize) {
       );
     }
   }
-
-  // Daun teratai di garis finish
+  
   if (type === 'goal') {
     for (let c = 0; c < COLS; c++) {
       const size = tileSize * 0.7;

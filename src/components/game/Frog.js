@@ -4,7 +4,6 @@ import { Animated, Text, StyleSheet } from 'react-native';
 export default function Frog({ x, row, tileSize, hopCount }) {
   const scale = useRef(new Animated.Value(1)).current;
 
-  // Animasi "lompat": membesar sebentar lalu memantul kembali
   useEffect(function () {
     if (hopCount === 0) return;
     scale.setValue(1.35);
